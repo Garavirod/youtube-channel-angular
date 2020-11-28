@@ -18,7 +18,10 @@
             </strong>
             {{video.publishedAt | date}}
         </p>
-        <button class="btn btn-outline-success btn-block">play</button>
+        <button 
+            class="btn btn-outline-success btn-block"
+            (click)="showVideo(video)"
+            >play</button>
       </div>
     </div>
 </div>
