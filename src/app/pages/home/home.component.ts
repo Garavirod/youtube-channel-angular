@@ -15,6 +15,10 @@ export class HomeComponent implements OnInit {
   constructor(private youtubeService: YoutubeService) { }
 
   ngOnInit(): void {
+    this.loadVideos();
+  }
+
+  loadVideos(){
     this.youtubeService.getDataVideos()
     .subscribe(res=>{
       this.videos.push( ...res );
@@ -26,6 +30,7 @@ export class HomeComponent implements OnInit {
   showVideo( video: Video ){
     console.log(video);
     Swal.fire({
+      // This iframe was obtained from youtube 'shared section'
       html: `
         <h4>${video.title}</h4>
         <iframe 
