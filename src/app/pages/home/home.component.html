@@ -1,3 +1,29 @@
 <h1 class="mt-4 font-weight-light">YouTube angular</h1>
 <hr>
 <!-- https://www.youtube.com/channel/UCuaPTYj15JSkETGnEseaFFg -->
+<div class="card-columns">
+    <div class="card" *ngFor="let video of videos">
+      <img [src]="video.thumbnails.high.url" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{video.title}}</h5>
+        <p class="card-text">
+            <strong>
+                Author: 
+            </strong>
+            {{video.channelTitle}}
+        </p>
+        <p class="card-text">
+            <strong>
+                Published: 
+            </strong>
+            {{video.publishedAt | date}}
+        </p>
+        <button class="btn btn-outline-success btn-block">play</button>
+      </div>
+    </div>
+</div>
+<div class="row mt-5 mb-5 text-center">
+    <div class="col">
+        <button class="btn btn-outline-primary btn-lg">Load more</button>
+    </div>
+</div>
